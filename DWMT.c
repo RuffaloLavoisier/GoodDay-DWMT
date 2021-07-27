@@ -17,11 +17,11 @@ int count = 0;
 unsigned _stdcall Thread_A(void* arg) {
 
 	while (1) {
-		Beep(350, 200);
-		//count = count + 1;
-		Sleep(500);
+		Beep(350, speed);
+		count = count + 1;
+		Sleep(delay);
 	}
-	//printf("총 카운트 : %d \n",count);
+	printf("총 카운트 : %d \n",count);
 }
 
 int main(void) {
@@ -43,12 +43,10 @@ int main(void) {
 
 	srand(time(NULL));
 
-
 	printf("Give me a Your Speed : \n");
 	scanf_s("%d", &speed);
 	printf("Give me a Your Delay : \n");
 	scanf_s("%d", &delay);
-
 
 	_beginthreadex(NULL, 0, Thread_A, 0, 0, NULL);
 
@@ -72,8 +70,6 @@ int main(void) {
 		int result[] = {
 			  number_1 + number_2
 			, number_1 - number_2
-			, number_1 / number_2
-			, number_1 * number_2
 		};
 
 		system("cls");
@@ -81,10 +77,12 @@ int main(void) {
 		printf("%d %c %d  = ", number_1, calculator[Index], number_2);
 		scanf_s("%d", &answer);
 
-		if (answer == EXIT_KEY) break;
 
 		fprintf(fp, "%d %c %d  = %d // 내가 쓴 정답 : %d // 총 카운트 : %d \n"
 			, number_1, calculator[Index], number_2, result[Index], answer,count); //문자열 입력
+
+		if (answer == EXIT_KEY) break;
+
 
 
 	}
