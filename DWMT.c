@@ -29,8 +29,8 @@ int main(void) {
 	FILE* fp;
 	fopen_s(&fp, "test.txt", "w");
 
-	// introduction
-	int difficulty = 0;
+
+
 
 	//main number tool
 	int number_1 = 0;
@@ -60,12 +60,7 @@ int main(void) {
 			printf("de");
 			number_2 = rand() % MAX_DOUBLE_DIGITS + MIN_DOUBLE_DIGITS;// 1 ~ 99
 		} while ( Index == 1  && number_1 < number_2 );
-
-		//	음수 제외(모든 결과 값)
-		// 	앞 수가 뒷 수 보다 커야 함 (뺄셈)
-		//	앞 수가 2자리면 뒷자리는 한자리(곱셈)
-		//	나눗셈이면 앞자리가 뒷자리보다 커야함(나눗셈)
-
+ 
 		// calculator result
 		int result[] = {
 			  number_1 + number_2
